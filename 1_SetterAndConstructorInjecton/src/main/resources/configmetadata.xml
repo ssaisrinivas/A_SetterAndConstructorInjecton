@@ -44,29 +44,78 @@
 		p:name="Sai" p:contact="1234" p:address="Mukkollu" />
 
 
-	<!-- List : <bean name="cus" class="com.sai.spring.setterInjecton.Customer"> 
-		<property name="name"> <value>Sai Srinivas</value> </property> <property 
-		name="contact"> <value>9704312287</value> </property> <property name="address"> 
-		<list> <value>Vskp</value> <value>Hyd</value> <value>Chennai</value> </list> 
-		</property> </bean> -->
+	<!-- List : -->
 
-	<!-- Set : <bean name="cus" class="com.sai.spring.setterInjecton.Customer"> 
-		<property name="name"> <value>Sai Srinivas</value> </property> <property 
-		name="contact"> <value>9704312287</value> </property> <property name="address"> 
-		<set> <value>Vskp</value> <value>Hyd</value> <value>Chennai</value> </set> 
-		</property> </bean> -->
+	<bean name="cus" class="com.sai.spring.setterInjecton.Customer">
+		<property name="name">
+			<value>Sai Srinivas</value>
+		</property>
+		<property name="contact">
+			<value>9704312287</value>
+		</property>
+		<property name="address">
+			<list>
+				<value>Vskp</value>
+				<value>Hyd</value>
+				<value>Chennai</value>
+			</list>
+		</property>
+	</bean>
 
-	<!-- Map : <bean name="cus" class="com.sai.spring.setterInjecton.Customer"> 
-		<property name="name"> <value>Sai Srinivas 123</value> </property> <property 
-		name="contact"> <value>9704312287</value> </property> <property name="address"> 
-		<map> <entry key="Home" value="Vskp" /> <entry key="ofc1" value="Hyd" /> 
-		<entry key="ofc2" value="kol" /> </map> </property> </bean> -->
 
-	<!-- Property : <bean name="cus" class="com.sai.spring.setterInjecton.Customer"> 
-		<property name="name"> <value>Sai Srinivas 321</value> </property> <property 
-		name="contact"> <value>9704312287</value> </property> <property name="address"> 
-		<props> <prop key="Home">vskp</prop> <prop key="ofc1">hyd</prop> <prop key="ofc2">kol</prop> 
-		</props> </property> </bean> -->
+	<!-- Set : -->
+
+	<bean name="cus" class="com.sai.spring.setterInjecton.Customer">
+		<property name="name">
+			<value>Sai Srinivas</value>
+		</property>
+		<property name="contact">
+			<value>9704312287</value>
+		</property>
+		<property name="address">
+			<set>
+				<value>Vskp</value>
+				<value>Hyd</value>
+				<value>Chennai</value>
+			</set>
+		</property>
+	</bean>
+
+	<!-- Map : -->
+
+	<bean name="cus" class="com.sai.spring.setterInjecton.Customer">
+		<property name="name">
+			<value>Sai Srinivas 123</value>
+		</property>
+		<property name="contact">
+			<value>9704312287</value>
+		</property>
+		<property name="address">
+			<map>
+				<entry key="Home" value="Vskp" />
+				<entry key="ofc1" value="Hyd" />
+				<entry key="ofc2" value="kol" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- Property : -->
+
+	<bean name="cus" class="com.sai.spring.setterInjecton.Customer">
+		<property name="name">
+			<value>Sai Srinivas 321</value>
+		</property>
+		<property name="contact">
+			<value>9704312287</value>
+		</property>
+		<property name="address">
+			<props>
+				<prop key="Home">vskp</prop>
+				<prop key="ofc1">hyd</prop>
+				<prop key="ofc2">kol</prop>
+			</props>
+		</property>
+	</bean>
 
 
 	<bean name="order" class="com.sai.spring.setterInjecton.Order">
@@ -91,31 +140,31 @@
 	<!-- Constructor injection -->
 
 	<bean name="customer"
-		class="com.sai.spring.setterInjecton.Customer">
-		<constructor-arg value="Sai Srinivas22"
-			type="java.lang.String" />
-		<constructor-arg>
-			<value>9502168833</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>Hyderabad</value>
-		</constructor-arg>
-	</bean>
+	class="com.sai.spring.setterInjecton.Customer">
+	<constructor-arg value="Sai Srinivas22"
+		type="java.lang.String" />
+	<constructor-arg>
+		<value>9502168833</value>
+	</constructor-arg>
+	<constructor-arg>
+		<value>Hyderabad</value>
+	</constructor-arg>
+</bean>
 
 	<bean name="ord" class="com.sai.spring.setterInjecton.Order">
-		<constructor-arg type="int">
-			<value>86868</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>One plus mobile</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>22/09/2022</value>
-		</constructor-arg>
-		<constructor-arg>
-			<ref bean="cus2" />
-		</constructor-arg>
-	</bean>
+	<constructor-arg type="int">
+		<value>86868</value>
+	</constructor-arg>
+	<constructor-arg>
+		<value>One plus mobile</value>
+	</constructor-arg>
+	<constructor-arg>
+		<value>22/09/2022</value>
+	</constructor-arg>
+	<constructor-arg>
+		<ref bean="customer" />
+	</constructor-arg>
+</bean>
 
 
 	<bean name="ord1" class="com.sai.spring.setterInjecton.Order">
@@ -125,9 +174,12 @@
 		<constructor-arg index="0">
 			<value>One plus mobile</value>
 		</constructor-arg>
-	</bean>
-
-
-
+		<constructor-arg>
+			<value>22/09/2022</value>
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="customer" />
+		</constructor-arg>
+</bean>
 
 </beans>

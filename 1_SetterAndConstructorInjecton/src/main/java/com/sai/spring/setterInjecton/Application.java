@@ -26,7 +26,6 @@ public class Application {
 		System.out.println("Addresses: "+order.getCustomer());
 		
 		System.out.println();
-		System.out.println();
 		
 		System.out.println("From Constructor Injuction \n");
 		Customer customer1 = (Customer) context.getBean("cus");

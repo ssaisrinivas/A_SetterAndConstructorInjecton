@@ -15,7 +15,8 @@ public class Order {
 	}
 	
 	
-	public Order(int productId, String productName, Date orderDate, Customer customer) {
+	public Order(int productId, String productName, Date orderDate, Customer customer) 
+	{
 		super();
 		this.productId = productId;
 		this.productName = productName;
